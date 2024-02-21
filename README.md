@@ -59,7 +59,7 @@ Here is an example of a successful JSON response after adding an item:
 
 This is the work in progress portion of this project. This bot will eventually be deployed to a Heroku server (hence the Procfile)
 
-notes:
+## Notes:
 
 :acowg: is a slackmoji only available if you download it from slackmojis.com and set it up in your slack!
 
