@@ -26,19 +26,19 @@ The entry point for the Flask application. It loads environment variables and ru
 
 To install the necessary dependencies for this project, navigate to the project's root directory and run:
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
-## To start the slackbot run the following command:
+## To boot the slackbot locally run the following command:
 
-python main.py
+`python main.py`
 
 ## Testing with Postman
 
-1. **Start Your Flask App**: Ensure your Flask app is running locally on port 3000.
+1. **Start Your Flask App**: Ensure your Flask app is running locally on port 3000. To run the slackbot locally check the instructions above.
    
 2. **Configure Postman Request**: In Postman, set up a new POST request to your Flask app's `/slack/command` endpoint. The full URL will be `http://127.0.0.1:3000/slack/command` if you're running the app locally.
 
-3. **Add Form Data**: In the request body, select `x-www-form-urlencoded` and enter the following key-value pairs:
+3. **Send POST request**: In the request body, select `x-www-form-urlencoded` and enter the following key-value pairs:
    - `command`: The Slack slash command you want to test (e.g., `/add` or `/rem`).
    - `text`: The text that follows the command (e.g., `This is an item`) which would be what a string value that is added or removed from the list.
 
@@ -51,8 +51,9 @@ Here is an example of a successful JSON response after adding an item:
 ```json
 {
   "response_type": "in_channel",
-  "text": "Added 'TEST1' to the list :acowg: \n\n:sparkles:Updated wishlist:sparkles:: \n- TEST1"
+  "text": "Added 'This is an item' to the list :acowg: \n\n:sparkles:Updated wishlist:sparkles:: \n- TEST1"
 }
+```
 
 ## Deployment
 
@@ -62,7 +63,7 @@ notes:
 
 :acowg: is a slackmoji only available if you download it from slackmojis.com and set it up in your slack!
 
-Also, for privacy reasons I have not included my real .env file here which contains sensitive information about my slack channel. You must substitute the current values in this .env file with your own slack token and channel ID values.
+Also, for privacy reasons I have not included my real `.env` file here which contains sensitive information about my slack channel. You must create your own `.env` file and initialize the variables `SLACK_TOKEN` and `SLACK_CHANNEL_ID` with your own slack channel values.
 
 Have fun :)
 
